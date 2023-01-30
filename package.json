@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ThomasOmura/notes-website/issues"
   },
-  "homepage": "https://github.com/ThomasOmura/notes-website#readme"
+  "homepage": "https://github.com/ThomasOmura/notes-website#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
