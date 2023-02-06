@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+</head>
+<body>
+    <%- include('header') %>
+  <h1><%= title %></h1>
+  <form action="/add" method="post">
+    <input type="text" name="name">
+    <input type="submit" value="Add">
+  </form>
+  <ul>
+    <% data.forEach(item => { %>
+      <li><%= item.name %> <a href="/remove/<%= item.id %>">Delete</a></li>
+    <% }); %>
+    <%- include('footer') %>
+  </ul>
+</body>
+</html>
