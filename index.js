@@ -21,6 +21,17 @@ mongoose.connect(url, {
 app.use('/', noteRouter);
 app.use('/', router);
 
+// Error handlers
+app.use((err, req, res, next) => {
+  res.status(500);
+  res.render("error", { errorMessage: err.message });
+});
+
+app.use((req, res, next) => {
+  res.status(404);
+  res.render("error", { errorMessage: "Sorry page not found" });
+});
+
 // Server
 app.listen(3000, () => {
   console.log('Server started on port 3000');
