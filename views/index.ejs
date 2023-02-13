@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= title %></title>
+  <title>Notes</title>
 </head>
 <body>
-    <%- include('header') %>
-  <h1><%= title %></h1>
-  <form action="/add" method="post">
-    <input type="text" name="name">
-    <input type="submit" value="Add">
+  <%- include('header') %>
+
+  <h1>Notes</h1>
+  <form method="post" action="/create">
+    <input type="text" name="text" required>
+    <button type="submit">Add note</button>
   </form>
   <ul>
-    <% data.forEach(item => { %>
-      <li><%= item.name %> <a href="/remove/<%= item.id %>">Delete</a></li>
+    <% notes.forEach(function(note) { %>
+      <li><%= note.text %>
+        <form method="post" action="/<%= note.id %>?_method=DELETE">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
     <% }); %>
+
     <%- include('footer') %>
   </ul>
 </body>
