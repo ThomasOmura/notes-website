@@ -5,11 +5,9 @@ const controller = require("../controllers/controller");
 // Getters
 router.get("/", controller.index);
 router.get("/about", controller.about);
-router.get("/remove/:id", controller.remove);
-router.get("/login", controller.loginForm);
+// router.get("/login", controller.loginForm);
 
 // Setters
-router.post("/add", controller.add);
-router.post("/login", controller.login);
+// router.post("/login", controller.login);
 
 module.exports = router;
