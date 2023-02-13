@@ -1,6 +1,20 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const app = express();
 const router = require("./routes/index");
+ 
+//DB
+const url = "mongodb+srv://dbnotes:dbnotes@notes-app.gbu1ru6.mongodb.net/?retryWrites=true&w=majority"
+async function connect() {
+try {
+  await mongoose.connect(url);
+  console.log("Connected TO MONGODB")
+} catch (err) {
+  console.log(err)
+}
+}
+connect();
+//
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
