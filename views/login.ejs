@@ -2,15 +2,18 @@
 <html>
   <head>
     <%- include('header') %>
+  </head>
     <title>Login</title>
   <body>
     <h1>Task Plan</h1>
-    <form>
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username">
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password">
-      <input type="submit" value="Login">
-    </form>
-  </body>
-</html>
+    <body>
+      <h2>Log In</h2>
+      <form action="/login" method="post">
+      <input type="text" name="name" placeholder="Name">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit">
+      </form>
+
+      <a href="/signup">Make a new account</a>
+      </body>
+      </html>
