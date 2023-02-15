@@ -72,15 +72,13 @@ app.post("/login", async (req, res) => {
   try {
     const check = await collection.findOne({ name: req.body.name });
     if (check.password === req.body.password) {
-      res.redirect("/");
+      return res.redirect("/");
     } else {
-      res.send("wrong password");
+      return res.send("wrong password");
     }
   } catch {
-    res.send("wrong details");
+    return res.send("wrong details");
   }
-
-  res.redirect("/");
 });
 
 app.use((req, res, next) => {
